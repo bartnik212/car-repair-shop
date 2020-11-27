@@ -1,4 +1,4 @@
-package com.example.car.repair.shop2.app.model;
+package com.example.car.repair.shop2.app.core.model;
 
 import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.Cascade;

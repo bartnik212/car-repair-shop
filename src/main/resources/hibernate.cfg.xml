@@ -20,9 +20,9 @@
         <property name="hbm2ddl.auto">update</property>
         <property name="show_sql">true</property>
 
-        <mapping class="com.example.car.repair.shop2.app.model.Car"/>
-        <mapping class="com.example.car.repair.shop2.app.model.Mechanic"/>
-        <mapping class="com.example.car.repair.shop2.app.model.Order"/>
+        <mapping class="com.example.car.repair.shop2.app.core.model.Car"/>
+        <mapping class="com.example.car.repair.shop2.app.core.model.Mechanic"/>
+        <mapping class="com.example.car.repair.shop2.app.core.model.Order"/>
 
 
 
