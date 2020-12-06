@@ -20,16 +20,16 @@ public class Mechanic {
     private String name;
     private String surName;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate birthDate;
+//    @DateTimeFormat(pattern = "yyyy-MM-dd")
+//    private LocalDate birthDate;
 
-    private Seniority seniority;
+//    private Seniority seniority;
     private Double salary;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @EqualsAndHashCode.Exclude
-    @ToString.Exclude
-    private Order order;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @EqualsAndHashCode.Exclude
+//    @ToString.Exclude
+//    private Order order;
 
 
 

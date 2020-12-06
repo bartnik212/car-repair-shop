@@ -2,18 +2,22 @@ package com.example.car.repair.shop2.app.core.controller;
 
 import com.example.car.repair.shop2.app.core.model.Mechanic;
 import com.example.car.repair.shop2.app.module.serviceMechanic.MechanicService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+
+@Slf4j
 @Controller
 public class ConfigController {
 
+    private final MechanicService mechanicService;
 
-    @Autowired
-    private MechanicService mechanicService;
+    public ConfigController(MechanicService mechanicService) {
+        this.mechanicService = mechanicService;
+    }
 
 
     @GetMapping("/landing_page")
@@ -32,7 +36,7 @@ public class ConfigController {
     @PostMapping("/mechanic_add")
     public String postAddMechanic(Mechanic mechanic) {
         mechanicService.save(mechanic);
-
+        log.info("dodany mechanik: " + mechanic);
         return "redirect:/landing_page";
     }
 
