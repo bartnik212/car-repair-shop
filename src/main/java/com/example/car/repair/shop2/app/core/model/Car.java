@@ -19,7 +19,7 @@
 //    private TypeOfFuel typeOfFuel;
 //    private Double engineCapacity;
 //
-//    @OneToMany(mappedBy = "car", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+//    @OneToMany(mappedBy = "cars", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
 //    @Cascade(value = org.hibernate.annotations.CascadeType.REMOVE)
 //    @EqualsAndHashCode.Exclude
 //    private Set<Order> orders;

@@ -5,6 +5,8 @@ import com.example.car.repair.shop2.app.core.model.Mechanic;
 import com.example.car.repair.shop2.app.module.repositories.MechanicRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MechanicService {
 
@@ -16,5 +18,9 @@ public class MechanicService {
 
     public void save (Mechanic mechanic) {
        mechanicRepository.save(mechanic);
+   }
+
+   public List<Mechanic> findAllMechanics() {
+        return mechanicRepository.findAll();
    }
 }

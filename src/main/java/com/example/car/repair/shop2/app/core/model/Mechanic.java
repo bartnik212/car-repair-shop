@@ -1,10 +1,12 @@
 package com.example.car.repair.shop2.app.core.model;
 
 import lombok.*;
+import org.hibernate.annotations.Cascade;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 @Data
@@ -19,20 +21,17 @@ public class Mechanic {
 
     private String name;
     private String surName;
-
-//    @DateTimeFormat(pattern = "yyyy-MM-dd")
-//    private LocalDate birthDate;
-
-//    private Seniority seniority;
     private Double salary;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @EqualsAndHashCode.Exclude
-//    @ToString.Exclude
-//    private Order order;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate birthDate;
 
+    @Enumerated(value = EnumType.STRING)
+    private Seniority seniority;
 
-
-
+    @ManyToMany(mappedBy = "mechanics", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @Cascade(value = org.hibernate.annotations.CascadeType.REMOVE)
+    @EqualsAndHashCode.Exclude
+    private Set<Order> orders;
 
 }

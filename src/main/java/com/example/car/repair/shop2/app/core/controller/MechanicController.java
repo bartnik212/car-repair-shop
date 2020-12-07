@@ -1,6 +1,7 @@
 package com.example.car.repair.shop2.app.core.controller;
 
 import com.example.car.repair.shop2.app.core.model.Mechanic;
+import com.example.car.repair.shop2.app.core.model.Seniority;
 import com.example.car.repair.shop2.app.module.serviceMechanic.MechanicService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -11,11 +12,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Slf4j
 @Controller
-public class ConfigController {
+public class MechanicController {
 
     private final MechanicService mechanicService;
 
-    public ConfigController(MechanicService mechanicService) {
+    public MechanicController(MechanicService mechanicService) {
         this.mechanicService = mechanicService;
     }
 
@@ -29,6 +30,12 @@ public class ConfigController {
 
     @GetMapping("/mechanic_add")
     public String getAddMechanic(Model model) {
+        model.addAttribute("junior", Seniority.valueOf("JUNIOR"));
+        model.addAttribute("mid", Seniority.valueOf("MID"));
+        model.addAttribute("senior", Seniority.valueOf("SENIOR"));
+
+        model.addAttribute("seniorities", Seniority.values());
+
         model.addAttribute("newMechanic", new Mechanic());
         return "mechanics/mechanic_form";
     }
